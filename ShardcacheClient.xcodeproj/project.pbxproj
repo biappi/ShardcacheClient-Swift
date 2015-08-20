@@ -1,0 +1,469 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		26E353AA1B862E41009AC36C /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E353A91B862E41009AC36C /* Tests.swift */; };
+		26E353AC1B862E41009AC36C /* libShardcacheClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26E3539A1B862DFB009AC36C /* libShardcacheClient.a */; };
+		26E353B51B863E7E009AC36C /* CHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E353B41B863E7E009AC36C /* CHash.swift */; };
+		26E353B71B86415A009AC36C /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E353B61B86415A009AC36C /* Client.swift */; };
+		26E353B91B878F33009AC36C /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E353B81B878F33009AC36C /* Stream.swift */; };
+		26E353BB1B87DCE5009AC36C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E353BA1B87DCE5009AC36C /* Message.swift */; };
+		26E353C61B8812CC009AC36C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E353C51B8812CC009AC36C /* main.swift */; };
+		26E353CF1B881437009AC36C /* libShardcacheClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26E3539A1B862DFB009AC36C /* libShardcacheClient.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		26E353AD1B862E41009AC36C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26E353921B862DFB009AC36C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26E353991B862DFB009AC36C;
+			remoteInfo = ShardcacheClient;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		26E353C11B8812CC009AC36C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		26E3539A1B862DFB009AC36C /* libShardcacheClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libShardcacheClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		26E353A71B862E41009AC36C /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		26E353A91B862E41009AC36C /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		26E353AB1B862E41009AC36C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26E353B41B863E7E009AC36C /* CHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHash.swift; sourceTree = "<group>"; };
+		26E353B61B86415A009AC36C /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		26E353B81B878F33009AC36C /* Stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
+		26E353BA1B87DCE5009AC36C /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		26E353C31B8812CC009AC36C /* shardcacheclient-example */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "shardcacheclient-example"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26E353C51B8812CC009AC36C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		26E353971B862DFB009AC36C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26E353A41B862E41009AC36C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26E353AC1B862E41009AC36C /* libShardcacheClient.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26E353C01B8812CC009AC36C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26E353CF1B881437009AC36C /* libShardcacheClient.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		26E353911B862DFB009AC36C = {
+			isa = PBXGroup;
+			children = (
+				26E353BC1B881281009AC36C /* Example */,
+				26E353B31B863E7E009AC36C /* Sources */,
+				26E353A81B862E41009AC36C /* Tests */,
+				26E353C41B8812CC009AC36C /* Example */,
+				26E3539B1B862DFB009AC36C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		26E3539B1B862DFB009AC36C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				26E3539A1B862DFB009AC36C /* libShardcacheClient.a */,
+				26E353A71B862E41009AC36C /* Tests.xctest */,
+				26E353C31B8812CC009AC36C /* shardcacheclient-example */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		26E353A81B862E41009AC36C /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				26E353A91B862E41009AC36C /* Tests.swift */,
+				26E353AB1B862E41009AC36C /* Info.plist */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		26E353B31B863E7E009AC36C /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				26E353B41B863E7E009AC36C /* CHash.swift */,
+				26E353B61B86415A009AC36C /* Client.swift */,
+				26E353BA1B87DCE5009AC36C /* Message.swift */,
+				26E353B81B878F33009AC36C /* Stream.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		26E353BC1B881281009AC36C /* Example */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Example;
+			sourceTree = "<group>";
+		};
+		26E353C41B8812CC009AC36C /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				26E353C51B8812CC009AC36C /* main.swift */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		26E353981B862DFB009AC36C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		26E353991B862DFB009AC36C /* ShardcacheClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26E3539E1B862DFB009AC36C /* Build configuration list for PBXNativeTarget "ShardcacheClient" */;
+			buildPhases = (
+				26E353961B862DFB009AC36C /* Sources */,
+				26E353971B862DFB009AC36C /* Frameworks */,
+				26E353981B862DFB009AC36C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShardcacheClient;
+			productName = ShardcacheClient;
+			productReference = 26E3539A1B862DFB009AC36C /* libShardcacheClient.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		26E353A61B862E41009AC36C /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26E353AF1B862E41009AC36C /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				26E353A31B862E41009AC36C /* Sources */,
+				26E353A41B862E41009AC36C /* Frameworks */,
+				26E353A51B862E41009AC36C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26E353AE1B862E41009AC36C /* PBXTargetDependency */,
+			);
+			name = Tests;
+			productName = Tests;
+			productReference = 26E353A71B862E41009AC36C /* Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		26E353C21B8812CC009AC36C /* shardcacheclient-example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26E353C71B8812CC009AC36C /* Build configuration list for PBXNativeTarget "shardcacheclient-example" */;
+			buildPhases = (
+				26E353BF1B8812CC009AC36C /* Sources */,
+				26E353C01B8812CC009AC36C /* Frameworks */,
+				26E353C11B8812CC009AC36C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "shardcacheclient-example";
+			productName = "shardcacheclient-example";
+			productReference = 26E353C31B8812CC009AC36C /* shardcacheclient-example */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		26E353921B862DFB009AC36C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Antonio Malara";
+				TargetAttributes = {
+					26E353991B862DFB009AC36C = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					26E353A61B862E41009AC36C = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					26E353C21B8812CC009AC36C = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = 26E353951B862DFB009AC36C /* Build configuration list for PBXProject "ShardcacheClient" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 26E353911B862DFB009AC36C;
+			productRefGroup = 26E3539B1B862DFB009AC36C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				26E353991B862DFB009AC36C /* ShardcacheClient */,
+				26E353A61B862E41009AC36C /* Tests */,
+				26E353C21B8812CC009AC36C /* shardcacheclient-example */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		26E353A51B862E41009AC36C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		26E353961B862DFB009AC36C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26E353B71B86415A009AC36C /* Client.swift in Sources */,
+				26E353BB1B87DCE5009AC36C /* Message.swift in Sources */,
+				26E353B91B878F33009AC36C /* Stream.swift in Sources */,
+				26E353B51B863E7E009AC36C /* CHash.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26E353A31B862E41009AC36C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26E353AA1B862E41009AC36C /* Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26E353BF1B8812CC009AC36C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26E353C61B8812CC009AC36C /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		26E353AE1B862E41009AC36C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26E353991B862DFB009AC36C /* ShardcacheClient */;
+			targetProxy = 26E353AD1B862E41009AC36C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		26E3539C1B862DFB009AC36C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		26E3539D1B862DFB009AC36C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		26E3539F1B862DFB009AC36C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				EXECUTABLE_PREFIX = lib;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACH_O_TYPE = mh_dylib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		26E353A01B862DFB009AC36C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				EXECUTABLE_PREFIX = lib;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACH_O_TYPE = mh_dylib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		26E353B01B862E41009AC36C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = name.malara.antonio.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		26E353B11B862E41009AC36C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = name.malara.antonio.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		26E353C81B8812CC009AC36C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		26E353C91B8812CC009AC36C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26E353951B862DFB009AC36C /* Build configuration list for PBXProject "ShardcacheClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26E3539C1B862DFB009AC36C /* Debug */,
+				26E3539D1B862DFB009AC36C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26E3539E1B862DFB009AC36C /* Build configuration list for PBXNativeTarget "ShardcacheClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26E3539F1B862DFB009AC36C /* Debug */,
+				26E353A01B862DFB009AC36C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		26E353AF1B862E41009AC36C /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26E353B01B862E41009AC36C /* Debug */,
+				26E353B11B862E41009AC36C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		26E353C71B8812CC009AC36C /* Build configuration list for PBXNativeTarget "shardcacheclient-example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26E353C81B8812CC009AC36C /* Debug */,
+				26E353C91B8812CC009AC36C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 26E353921B862DFB009AC36C /* Project object */;
+}
