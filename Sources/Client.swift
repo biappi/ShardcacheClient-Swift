@@ -24,26 +24,48 @@ public class ShardcacheClient {
         self.nodes = nodes
     }
 
+    func connectionForNode(nodeName: String) -> Stream {
+        let connection = connections[nodeName]
+        
+        if let connection = connection {
+            return connection
+        }
+        else {
+            let (host, port) = nodes[nodeName]!
+            let connection   = Stream(host: host, port: port)
+            
+            connection.connect()
+            connections[nodeName] = connection
+            
+            return connection
+        }
+    }
+    
     func get(key:[UInt8]) {
         var message = Message(message:.GET)
         message.addRecord(key)
         message.end()
         
         let nodeName   = chash.lookup(key)
-        let connection = connections[nodeName]
+        let connection = connectionForNode(nodeName)
         
-        if let connection = connection {
-            connection.send(message.packet)
-        }
-        else {
-            let (host, port) = nodes[nodeName]!
-            let connection = Stream(host: host, port: port)
-            connection.connect()
-            connections[nodeName] = connection
-        }
+        connection.send(message.packet)
+    }
+    
+    func set(key:[UInt8], value:[UInt8]) {
+        var message = Message(message:.SET)
+        message.addRecord(key)
+        message.addRecord(value)
+        message.end()
+        
+        let nodeName   = chash.lookup(key)
+        let connection = connectionForNode(nodeName)
+        
+        connection.send(message.packet)
     }
 }
 
 public extension ShardcacheClient {
     func get(key: String) { get([UInt8](key.utf8)) }
+    func set(key: String, value: String) { set([UInt8](key.utf8), value:[UInt8](value.utf8)) }
 }

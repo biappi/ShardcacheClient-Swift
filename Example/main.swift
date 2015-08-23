@@ -7,7 +7,11 @@
 //
 
 import ShardcacheClient
+import Foundation
 
 let x = ShardcacheClient(nodes: ["me": ("localhost", 6969)])
 
+//x.set("suca", value: "milla")
 x.get("suca")
+
+NSRunLoop.currentRunLoop().run()

@@ -9,9 +9,11 @@
 import Foundation
 
 class Stream : NSObject, NSStreamDelegate {
-    var input  : NSInputStream
-    var output : NSOutputStream
-    var toSend : [UInt8]?
+    var input      : NSInputStream
+    var output     : NSOutputStream
+    
+    var toSend     : [UInt8]?
+    var inputSoFar : [UInt8]?
     
     init(host: String, port: Int) {
         var input  : NSInputStream?
@@ -69,6 +71,30 @@ class Stream : NSObject, NSStreamDelegate {
         case NSStreamEvent.HasBytesAvailable:
             print("HasBytesAvailable")
             
+            var allBuffer   = [UInt8](count: 4096, repeatedValue: 0)
+            let length      = input.read(&allBuffer, maxLength: allBuffer.count)
+            let inputBuffer = [UInt8](allBuffer[0..<length])
+            
+            if var inputSoFar = self.inputSoFar {
+                inputSoFar.extend(inputBuffer)
+            }
+            else {
+                inputSoFar = inputBuffer
+            }
+            
+            if let data = inputSoFar {
+                do {
+                    let records = try parseResponse(data)
+                    print(records)
+                }
+                catch ParsingError.IncompleteBuffer {
+                    return
+                }
+                catch {
+                    // TODO: error
+                }
+            }
+            
         case NSStreamEvent.HasSpaceAvailable:
             print("HasSpaceAvailable")
             
@@ -77,8 +103,8 @@ class Stream : NSObject, NSStreamDelegate {
             
         case NSStreamEvent.ErrorOccurred:
             print("ErrorOccurred")
-            print (input.streamStatus.rawValue)
-            print (input.streamError)
+            print(input.streamStatus.rawValue)
+            print(input.streamError)
             
         default:
             assertionFailure("nada")
@@ -97,6 +123,7 @@ class Stream : NSObject, NSStreamDelegate {
             print("HasBytesAvailable")
             
         case NSStreamEvent.HasSpaceAvailable:
+            print("HasSpaceAvailable")
             if let toSend = toSend {
                 let sent = output.write(toSend, maxLength: toSend.count)
                 self.toSend = [UInt8](toSend[sent..<toSend.count])
@@ -107,8 +134,8 @@ class Stream : NSObject, NSStreamDelegate {
             
         case NSStreamEvent.ErrorOccurred:
             print("ErrorOccurred")
-            print (output.streamStatus.rawValue)
-            print (output.streamError)
+            print(output.streamStatus.rawValue)
+            print(output.streamError)
             
         default:
             assertionFailure("nada")
@@ -122,13 +149,13 @@ class Stream : NSObject, NSStreamDelegate {
         else {
             let sent = output.write(data, maxLength: data.count)
             
-            if sent != data.count {
-                toSend = [UInt8](data[sent..<data.count])
-            }
-            
             if sent == -1 {
                 //TODO: error
                 assertionFailure("nada")
+            }
+
+            if sent != data.count {
+                toSend = [UInt8](data[sent..<data.count])
             }
         }
     }

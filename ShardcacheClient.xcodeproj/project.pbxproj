@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2635A0441B88FC9D00CADEFF /* CHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E353B41B863E7E009AC36C /* CHash.swift */; };
+		2635A0451B88FC9D00CADEFF /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E353B61B86415A009AC36C /* Client.swift */; };
+		2635A0461B88FC9D00CADEFF /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E353BA1B87DCE5009AC36C /* Message.swift */; };
+		2635A0471B88FC9D00CADEFF /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E353B81B878F33009AC36C /* Stream.swift */; };
 		26E353AA1B862E41009AC36C /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E353A91B862E41009AC36C /* Tests.swift */; };
 		26E353AC1B862E41009AC36C /* libShardcacheClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26E3539A1B862DFB009AC36C /* libShardcacheClient.a */; };
 		26E353B51B863E7E009AC36C /* CHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E353B41B863E7E009AC36C /* CHash.swift */; };
@@ -14,7 +18,6 @@
 		26E353B91B878F33009AC36C /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E353B81B878F33009AC36C /* Stream.swift */; };
 		26E353BB1B87DCE5009AC36C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E353BA1B87DCE5009AC36C /* Message.swift */; };
 		26E353C61B8812CC009AC36C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E353C51B8812CC009AC36C /* main.swift */; };
-		26E353CF1B881437009AC36C /* libShardcacheClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26E3539A1B862DFB009AC36C /* libShardcacheClient.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +75,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26E353CF1B881437009AC36C /* libShardcacheClient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +84,6 @@
 		26E353911B862DFB009AC36C = {
 			isa = PBXGroup;
 			children = (
-				26E353BC1B881281009AC36C /* Example */,
 				26E353B31B863E7E009AC36C /* Sources */,
 				26E353A81B862E41009AC36C /* Tests */,
 				26E353C41B8812CC009AC36C /* Example */,
@@ -118,13 +119,6 @@
 				26E353B81B878F33009AC36C /* Stream.swift */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		26E353BC1B881281009AC36C /* Example */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Example;
 			sourceTree = "<group>";
 		};
 		26E353C41B8812CC009AC36C /* Example */ = {
@@ -274,6 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2635A0441B88FC9D00CADEFF /* CHash.swift in Sources */,
+				2635A0451B88FC9D00CADEFF /* Client.swift in Sources */,
+				2635A0461B88FC9D00CADEFF /* Message.swift in Sources */,
+				2635A0471B88FC9D00CADEFF /* Stream.swift in Sources */,
 				26E353C61B8812CC009AC36C /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,6 +444,7 @@
 				26E353A01B862DFB009AC36C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		26E353AF1B862E41009AC36C /* Build configuration list for PBXNativeTarget "Tests" */ = {
 			isa = XCConfigurationList;
@@ -454,6 +453,7 @@
 				26E353B11B862E41009AC36C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		26E353C71B8812CC009AC36C /* Build configuration list for PBXNativeTarget "shardcacheclient-example" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +462,7 @@
 				26E353C91B8812CC009AC36C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

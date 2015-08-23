@@ -15,8 +15,9 @@ let PROTOCOL_1_HEADER : [UInt8] = [
     0x01
 ]
 
-let RECORD_SEPARATOR  :  UInt8  =  0x80
-let RECORD_TERMINATOR : [UInt8] = [0x00, 0x00]
+let MESSAGE_TERMINATOR :  UInt8  =  0x00
+let RECORD_SEPARATOR   :  UInt8  =  0x80
+let RECORD_TERMINATOR  : [UInt8] = [0x00, 0x00]
 
 let CHUNK_SIZE = 0xFFFF
 
@@ -95,4 +96,60 @@ struct Message {
         
         packet.append(0)
     }
+}
+
+enum ParsingError : ErrorType {
+    case IncompleteBuffer
+    case InvalidSignature
+    case VersionNotSupported
+    case SignatureNotSupported
+    case BadSeparator
+}
+
+func parseResponse(data: [UInt8]) throws -> [[UInt8]] {
+    guard data.count > 5 else { throw ParsingError.IncompleteBuffer }
+    
+    let header : [UInt8] = [0x73, 0x68, 0x63]
+    
+    var offset = 0
+    
+    if data[offset++] != header[0] ||
+       data[offset++] != header[1] ||
+       data[offset++] != header[2]
+    {
+        throw ParsingError.InvalidSignature
+    }
+    
+    let version = data[offset++]
+    if version != 1 {
+        throw ParsingError.VersionNotSupported
+    }
+    
+    let messageType = data[offset++]
+    if messageType == MessageType.SIG.rawValue  ||
+       messageType == MessageType.CSIG.rawValue
+    {
+        throw ParsingError.SignatureNotSupported
+    }
+    
+    var records : [[UInt8]] = []
+    
+    while offset < data.count {
+        let chunkSize : Int = Int(data[offset++]) << 8 + Int(data[offset++])
+        guard data.count >= offset + chunkSize else { throw ParsingError.IncompleteBuffer }
+        
+        records.append([UInt8](data[offset..<offset+chunkSize]))
+        offset += chunkSize
+        
+        let separator = data[offset++]
+        if separator == MESSAGE_TERMINATOR {
+            break
+        }
+        
+        if separator != RECORD_SEPARATOR {
+            throw ParsingError.BadSeparator
+        }
+    }
+    
+    return records
 }
